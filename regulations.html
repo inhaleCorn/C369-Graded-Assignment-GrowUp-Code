@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAS Regulations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero, .hero-second {
+            background-color: #2e8b57;
+            color: white;
+            padding: 50px 20px;
+            position: relative;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .hero img, .hero-second img {
+            width: 200px;
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure the image is not cropped */
+            border-radius: 15px;
+        }
+
+        .hero img {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .hero-second img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .hero h1, .hero p, .hero-second h1, .hero-second p {
+            margin: 0;
+        }
+
+        .hero p, .hero-second p {
+            margin: 10px 0;
+        }
+
+        .link {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #0047ab;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            border-radius: 15px;
+        }
+
+        .content.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .content-container {
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+
+        .hero-second .text-content {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            position: relative;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>MAS Regulations</h1>
+
+        <div class="hero">
+            <h1>Regulatory Sandbox</h1>
+            <p>Learn about the guidelines and benefits of the Regulatory Sandbox.</p>
+            <span class="link" onclick="toggleContent('moreContent1')">Click here to find out more!</span>
+            <img src="pictures/MAS1.png" alt="Regulatory Sandbox">
+        </div>
+        <div class="content" id="moreContent1">
+            <div class="content-container">
+                <h2>Regulatory Sandbox</h2>
+                <p>The Regulatory Sandbox provides a safe environment for financial institutions to experiment with innovative financial products or services without immediately meeting all regulatory requirements. This helps promote innovation while ensuring consumer protection.</p>
+                <p>As an investor, it's important to understand that the sandbox helps bring new financial products to market safely. Growup adheres to these regulations by ensuring that any new products we introduce go through rigorous testing and comply with all necessary guidelines.</p>
+                <a href="https://www.mas.gov.sg/development/fintech/regulatory-sandbox">Read more</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero-second">
+            <img src="pictures/MAS2.png" alt="Enforcement">
+            <div class="text-content">
+                <h1>Enforcement</h1>
+                <p>Guidelines on MAS enforcement actions and ensuring compliance.</p>
+                <span class="link" onclick="toggleContent('moreContent2')">Learn more about MAS enforcement actions</span>
+            </div>
+        </div>
+        <div class="content" id="moreContent2">
+            <div class="content-container">
+                <h2>Enforcement</h2>
+                <p>MAS enforcement actions ensure that financial institutions comply with regulations and standards, protecting the integrity of the financial system and consumers. Violations can result in penalties, fines, or other corrective measures.</p>
+                <p>As an investor, you should be aware of the importance of regulatory compliance to ensure your investments are secure. Growup strictly adheres to MAS regulations to maintain high standards of conduct and protect our investors.</p>
+                <a href="https://www.mas.gov.sg/regulation/enforcement">Read more</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Cyber Security</h1>
+            <p>Details on the specific features and advantages of Singapore Savings Bonds.</p>
+            <span class="link" onclick="toggleContent('moreContent3')">Find out more here</span>
+            <img src="pictures/MAS3.png" alt="Cyber Security">
+        </div>
+        <div class="content" id="moreContent3">
+            <div class="content-container">
+                <h2>Cyber Security</h2>
+                <p>Cyber security regulations are designed to protect financial institutions and consumers from cyber threats. These guidelines ensure robust security measures are in place to safeguard sensitive data and maintain trust in the financial system.</p>
+                <p>As an investor, understanding the importance of cyber security is crucial. Growup implements comprehensive cyber security measures to protect your personal and financial information, adhering to all MAS guidelines.</p>
+                <a href="https://www.mas.gov.sg/regulation/cyber-security">Read more</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero-second">
+            <img src="pictures/MAS4.png" alt="Anti-Money Laundering">
+            <div class="text-content">
+                <h1>Anti-Money Laundering</h1>
+                <p>Information on regulations and offerings of collective investment schemes.</p>
+                <span class="link" onclick="toggleContent('moreContent4')">Learn more about anti-money laundering regulations</span>
+            </div>
+        </div>
+        <div class="content" id="moreContent4">
+            <div class="content-container">
+                <h2>Anti-Money Laundering</h2>
+                <p>Anti-money laundering (AML) regulations are critical for preventing financial crimes. These regulations require financial institutions to implement measures to detect and report suspicious activities that may involve money laundering or terrorism financing.</p>
+                <p>As an investor, it's important to know that AML regulations help protect the financial system from abuse. Growup follows strict AML guidelines to ensure the integrity of our services and safeguard against financial crimes.</p>
+                <a href="https://www.mas.gov.sg/regulation/anti-money-laundering">Read more</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+            } else {
+                content.classList.add('show');
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Growup. All rights reserved.</p>
+    </footer>
+</body>
+</html>

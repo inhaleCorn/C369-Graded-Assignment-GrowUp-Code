@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero, .hero-second {
+            background-color: #2e8b57;
+            color: white;
+            padding: 50px 20px;
+            position: relative;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .hero img, .hero-second img {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            object-fit: cover;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .hero img {
+            bottom: 0;
+            right: 0;
+            transform: translate(-50%, 50%);
+        }
+
+        .hero-second img {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .hero h1, .hero p, .hero-second h1, .hero-second p {
+            margin: 0;
+        }
+
+        .hero p, .hero-second p {
+            margin: 10px 0;
+        }
+
+        .link {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #0047ab;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            border-radius: 15px;
+        }
+
+        .content.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .content-container {
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+
+        .hero-second .text-content {
+            display: inline-block;
+            text-align: center;
+            margin-left: 240px;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            position: relative;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h1>Risk Tolerance VS Risk Capacity</h1>
+            <p>What's the difference?</p>
+            <p>Your risk tolerance is influenced by your personal outlook on potential losses, while risk capacity is determined by numerical factors such as financial needs, current assets, and future contributions to investments.</p>
+            <span class="link" onclick="toggleContent('moreContent1')">Click here to find out more!</span>
+            <img src="pictures/advice1.png" alt="advice 1 picture">
+        </div>
+        <div class="content" id="moreContent1">
+            <div class="content-container">
+                <h2>Risk Tolerance</h2>
+                <p>Based on your personal feelings and reactions to potential losses. It's about how much risk you're comfortable taking.</p>
+                <h2>Risk Capacity</h2>
+                <p>Based on numbers: your financial needs, current investments, and future contributions. It's about how much risk you can afford to take.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-second">
+            <img src="pictures/advice2.png" alt="advice 2 picture">
+            <div class="text-content">
+                <h1>Invest as a Group!</h1>
+                <p>Group investing or pooled investing can be a powerful way for individuals to pool their resources, share knowledge, and collectively invest in opportunities that may be out of reach for individual investors.</p>
+                <span class="link" onclick="toggleContent('moreContent2')">Here's some advice for investing as a group</span>
+            </div>
+        </div>
+        <div class="content" id="moreContent2">
+            <div class="content-container">
+                <h2>Group Investing Benefits</h2>
+                <p>Pooling resources can enable investments in larger opportunities, enhance due diligence through shared expertise, and spread risk among participants.</p>
+                <h2>How to Start</h2>
+                <p>Form a group with shared investment goals, establish clear guidelines for decision-making and profit-sharing, and regularly review investment performance.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+            } else {
+                content.classList.add('show');
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Growup. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp - Investing Buddies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tracking-buddies {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            min-height: 400px;
+        }
+
+        .tracking-buddies h2 {
+            color: #2e8b57;
+        }
+
+        .buddy-button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .buddy-button:hover {
+            background-color: #256c45;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+
+        .add-buddy-container {
+            margin-top: 20px;
+        }
+
+        .buddy-container {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let buddies = {
+                "inhaleCorn": "inhaleCorn",
+                "SpaceStashz": "SpaceStashz"
+            };
+
+            const buddyContainer = document.querySelector('.tracking-buddies');
+
+            function renderBuddies() {
+                buddyContainer.innerHTML = `
+                    <h2>Tracking Buddies</h2>
+                `;
+                for (let buddy in buddies) {
+                    buddyContainer.innerHTML += `
+                        <div class="buddy-container">
+                            <button class="buddy-button">${buddy}</button>
+                            <button class="buddy-button remove-button" data-buddy="${buddy}">Remove?</button>
+                        </div>
+                    `;
+                }
+                buddyContainer.innerHTML += `
+                    <div class="add-buddy-container">
+                        <a href="newBuddy.html" class="buddy-button">Add another buddy?</a>
+                    </div>
+                `;
+                addRemoveEventListeners();
+            }
+
+            function addRemoveEventListeners() {
+                document.querySelectorAll('.remove-button').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const buddyName = this.getAttribute('data-buddy');
+                        delete buddies[buddyName];
+                        renderBuddies();
+                    });
+                });
+            }
+
+            renderBuddies();
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="tracking-buddies">
+            <h2>Tracking Buddies</h2>
+            <div class="buddy-container">
+                <button class="buddy-button">inhaleCorn</button>
+                <button class="buddy-button remove-button" data-buddy="inhaleCorn">Remove?</button>
+            </div>
+            <div class="buddy-container">
+                <button class="buddy-button">SpaceStashz</button>
+                <button class="buddy-button remove-button" data-buddy="SpaceStashz">Remove?</button>
+            </div>
+            <div class="add-buddy-container">
+                <a href="newBuddy.html" class="buddy-button">Add another buddy?</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 GrowUp. All rights reserved.</p>
+    </footer>
+</body>
+</html>

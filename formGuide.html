@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .hero {
+            background-color: #2e8b57;
+            color: white;
+            padding: 50px 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(-50%, 50%);
+            object-fit: cover;
+            z-index: 10;
+        }
+
+        .hero h1, .hero p {
+            margin: 0;
+        }
+
+        .hero p {
+            margin: 10px 0;
+        }
+
+        .link {
+            color: #0047ab;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .content.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .form-guide {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .form-guide h2 {
+            margin-top: 0;
+        }
+
+        .form-guide ul {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .form-guide ul li {
+            margin-bottom: 10px;
+        }
+
+        .form-guide ul li strong {
+            color: #0047ab;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Form Guide</h1>
+        <p>This guide will help you fill out the <a href="https://www.police.gov.sg/-/media/Spf/Advisories/CTRv26.ashx">Suspicious Activity Reporting Form</a>.</p>
+        <div class="form-guide">
+            <h2>How to Fill Out the Form</h2>
+            <ul>
+                <li><strong>Personal Information:</strong> Enter your full name, contact number, and email address.</li>
+                <li><strong>Date and Time of Incident:</strong> Provide the exact date and time when the suspicious activity occurred.</li>
+                <li><strong>Location:</strong> Specify the location where the activity took place. Be as precise as possible.</li>
+                <li><strong>Description of Suspicious Activity:</strong> Give a detailed description of the activity. Include any relevant information such as behavior, appearance, and any items involved.</li>
+                <li><strong>Individuals Involved:</strong> List the names, if known, or descriptions of the individuals involved. Include details such as clothing, physical appearance, and any identifying marks.</li>
+                <li><strong>Vehicle Information:</strong> If a vehicle was involved, provide details such as make, model, color, and license plate number.</li>
+                <li><strong>Additional Information:</strong> Include any other information that may help the authorities. This could include witness statements, other suspicious activities, or any other observations.</li>
+                <li><strong>Supporting Documents:</strong> Attach any supporting documents or evidence, such as photographs or videos, that may assist in the investigation.</li>
+                <li><strong>Declaration:</strong> Read the declaration carefully, and sign and date the form to confirm the accuracy of the information provided.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 GrowUp. All rights reserved.</p>
+    </footer>
+</body>
+</html>

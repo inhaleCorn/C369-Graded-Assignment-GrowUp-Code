@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            margin: 2em;
+        }
+
+        .welcome-box {
+            flex: 1;
+            background-color: #2e8b57;
+            color: white;
+            padding: 2em;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 500px;
+            height: 300px;
+        }
+
+        .welcome-box h1 {
+            margin: 0;
+        }
+
+        .welcome-box p {
+            margin: 0.5em 0;
+        }
+
+        .form-box {
+            flex: 1;
+            background-color: white;
+            padding: 2em;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 500px;
+            height: 300px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 0.5em;
+            border: none;
+            border-radius: 5px;
+            background-color: #2e8b57;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #256c46;
+        }
+
+        .welcome-box a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .welcome-box a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="login.html">Home</a></li>
+            <li><a href="login.html">Markets</a></li>
+            <li><a href="login.html">Advice</a></li>
+            <li><a href="login.html">Regulations</a></li>
+            <li><a href="login.html">Contact</a></li>
+            <li><a id="accountLink" href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="welcome-box">
+            <h1>Welcome to GrowUp!</h1>
+            <p>Start investing today</p>
+            <p>New here? <a href="register.html">Create a new account here!</a></p>
+        </div>
+        <div class="form-box">
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Log in</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+            const accountLink = document.getElementById('accountLink');
+            accountLink.textContent = 'Account';
+            accountLink.href = 'account.html';
+        });
+    </script>
+</body>
+</html>

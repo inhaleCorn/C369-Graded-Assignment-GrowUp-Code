@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+            flex: 1;
+        }
+
+        .contact-content {
+            text-align: left;
+            max-width: 600px;
+            margin-right: 20px;
+        }
+
+        .contact-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .contact-image {
+            max-width: 400px;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-content a {
+            color: #2e8b57;
+            text-decoration: underline;
+        }
+
+        .contact-content a:hover {
+            color: #0047ab;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="contact-container">
+        <div class="contact-content">
+            <h1>Contact Us</h1>
+            <p>Office number: +65 1234 5678<br>Email: growup@email.com</p>
+            <h2>Notice Something Suspicious?</h2>
+            <p>Form: <a href="https://www.police.gov.sg/-/media/Spf/Advisories/CTRv26.ashx">https://www.police.gov.sg/-/media/Spf/Advisories/CTRv26.ashx</a><br>
+                Form Guide <a href="formGuide.html">here</a>!</p>
+        </div>
+        <div class="contact-image">
+            <img src="/pictures/contact.png" alt="Contact Us Image">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 GrowUp. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investing Solo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #2e8b57;
+        }
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #2e8b57;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .input-group input[type="number"],
+        .input-group input[type="text"],
+        .input-group input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #2e8b57;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .order-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .order-box {
+            flex: 1 1 calc(25% - 20px);
+            padding: 20px;
+            background-color: #2e8b57;
+            border: 2px solid #2e8b57;
+            border-radius: 10px;
+            color: white;
+            box-sizing: border-box;
+            cursor: pointer;
+            text-align: center;
+        }
+        .order-box.active {
+            background-color: #3cb371;
+        }
+        .submit-btn {
+            width: 80%;
+            padding: 15px;
+            margin: 20px auto;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .submit-btn.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .hidden {
+            display: none;
+        }
+        .terms-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .terms-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="investing-section">
+            <h1>Investing Solo</h1>
+            <div class="input-group">
+                <label for="shares">Input number of shares to purchase:</label>
+                <input type="number" id="shares" name="shares">
+            </div>
+            <h2>Choose order type:</h2>
+            <div class="order-container">
+                <div id="marketOrder" class="order-box" data-order="Market order">
+                    <h3>Market order</h3>
+                    <p>A market order is a buy or sell order to be executed immediately at current market prices.</p>
+                </div>
+                <div id="limitOrder" class="order-box" data-order="Limit order">
+                    <h3>Limit order</h3>
+                    <p>A limit order is a type of order to purchase or sell a security at a specified price or better.</p>
+                </div>
+                <div id="gtcOrder" class="order-box" data-order="GTC order">
+                    <h3>GTC order</h3>
+                    <p>A GTC (Good 'Til Canceled) order remains active until you decide to cancel it.</p>
+                </div>
+                <div id="stopOrder" class="order-box" data-order="Stop loss order">
+                    <h3>Stop loss order</h3>
+                    <p>A stop-loss order is designed to limit an investor's loss on a security position.</p>
+                </div>
+            </div>
+            <button id="submitOrder" class="submit-btn">Submit</button>
+        </section>
+        <section id="verification-section" class="hidden">
+            <h2>Before you start investing...</h2>
+            <p>We need to verify that it is you</p>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label for="confirmationCode">Confirmation Code</label>
+                <input type="text" id="confirmationCode" name="confirmationCode">
+                <label for="creditCard">Credit Card Number</label>
+                <input type="text" id="creditCard" name="creditCard">
+                <div class="terms-group">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">You agree to the <a href="#">Terms and conditions</a></label>
+                </div>
+                <button id="verifySubmit" class="submit-btn">Submit</button>
+            </div>
+        </section>
+        <section id="success-section" class="hidden">
+            <h2>Successful transaction!</h2>
+            <img src="pictures/submitted.png" alt="Success Image">
+            <p>Thank you for investing with us! <a href="trackInvestment.html">Click here to keep track of your transactions</a></p>
+            <p>Date: <span id="transactionDate"></span></p>
+            <p>Card Type: OCBC</p>
+            <p>No. of Shares Bought: 4</p>
+            <p>Order Type: Limit Order</p>
+            <p>Transaction ID: G832IQ9SH</p>
+        </section>
+    </main>
+    <script>
+        let selectedOrderType = null;
+
+        document.querySelectorAll('.order-box').forEach(function(box) {
+            box.addEventListener('click', function() {
+                document.querySelectorAll('.order-box').forEach(function(box) {
+                    box.classList.remove('active');
+                });
+                box.classList.add('active');
+                selectedOrderType = box.dataset.order;
+                validateForm();
+            });
+        });
+
+        document.getElementById('shares').addEventListener('input', function() {
+            validateForm();
+        });
+
+        function validateForm() {
+            const shares = document.getElementById('shares').value;
+            const submitBtn = document.getElementById('submitOrder');
+            if (shares && selectedOrderType) {
+                submitBtn.classList.add('active');
+            } else {
+                submitBtn.classList.remove('active');
+            }
+        }
+
+        document.getElementById('submitOrder').addEventListener('click', function() {
+            if (selectedOrderType && document.getElementById('shares').value) {
+                document.getElementById('investing-section').classList.add('hidden');
+                document.getElementById('verification-section').classList.remove('hidden');
+            }
+        });
+
+        function validateVerificationForm() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const confirmationCode = document.getElementById('confirmationCode').value;
+            const creditCard = document.getElementById('creditCard').value;
+            const terms = document.getElementById('terms').checked;
+            const verifyBtn = document.getElementById('verifySubmit');
+
+            if (username && email && confirmationCode && creditCard && terms) {
+                verifyBtn.classList.add('active');
+            } else {
+                verifyBtn.classList.remove('active');
+            }
+        }
+
+        function getCurrentDate() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return now.toLocaleDateString(undefined, options);
+        }
+
+        document.getElementById('username').addEventListener('input', validateVerificationForm);
+        document.getElementById('email').addEventListener('input', validateVerificationForm);
+        document.getElementById('confirmationCode').addEventListener('input', validateVerificationForm);
+        document.getElementById('creditCard').addEventListener('input', validateVerificationForm);
+        document.getElementById('terms').addEventListener('change', validateVerificationForm);
+
+        document.getElementById('verifySubmit').addEventListener('click', function() {
+            if (document.getElementById('verifySubmit').classList.contains('active')) {
+                document.getElementById('verification-section').classList.add('hidden');
+                document.getElementById('success-section').classList.remove('hidden');
+                document.getElementById('transactionDate').innerText = getCurrentDate();
+            }
+        });
+    </script>
+</body>
+</html>

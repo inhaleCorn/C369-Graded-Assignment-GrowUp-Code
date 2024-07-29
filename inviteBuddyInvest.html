@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Buddy to Invest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #2e8b57;
+        }
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #2e8b57;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .input-group input[type="text"],
+        .input-group input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #2e8b57;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            width: 80%;
+            padding: 15px;
+            margin: 20px auto;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Invite a Buddy to Invest</h1>
+        <form action="verification.html" method="GET">
+            <div class="input-group">
+                <label for="buddyName">Buddy's Name:</label>
+                <input type="text" id="buddyName" name="buddyName" required>
+            </div>
+            <div class="input-group">
+                <label for="buddyEmail">Buddy's Email:</label>
+                <input type="email" id="buddyEmail" name="buddyEmail" required>
+            </div>
+            <button type="submit" class="submit-btn">Next</button>
+        </form>
+    </main>
+</body>
+</html>

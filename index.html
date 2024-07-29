@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .home-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 2em;
+        }
+
+        .welcome-box {
+            max-width: 50%;
+            text-align: left;
+            padding: 2em;
+        }
+
+        .welcome-box h1 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        .welcome-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+
+        .why-us {
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        .why-us h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .comparison-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2em;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        .container {
+            background-color: #2e8b57;
+            color: white;
+            padding: 2em;
+            border-radius: 10px;
+            max-width: 300px;
+            text-align: center;
+            flex: 1;
+            height: 170px; 
+        }
+
+        .container h3 {
+            margin-top: 0;
+        }
+
+        .container p {
+            font-size: 1em;
+        }
+
+        .container a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            position: relative;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="home-container">
+        <div class="welcome-box">
+            <h1>GrowUp: Where investing is made easy</h1>
+            <p>GrowUp is the micro-investment web app for those eager to invest but don't meet traditional income requirements. Start small and take control of your financial future with GrowUp.</p>
+        </div>
+        <img src="pictures/GrowUpLogo.png" alt="GrowUp Logo">
+    </div>
+    <div class="why-us">
+        <h2>Why Us?</h2>
+    </div>
+    <div class="comparison-container">
+        <div class="container">
+            <h3>GrowUp</h3>
+            <p><u>Customizable Round-Ups:</u> Users can choose the round-up amount.</p>
+            <p><u>Flexible Scheduling:</u> Set daily, weekly, or monthly contributions tailored to their financial situation.</p>
+        </div>
+        <div class="container">
+            <h3>Other Micro-Investment Sites</h3>
+            <p><u>Fixed Round-Ups:</u> Mostly only offer round-ups to the nearest dollar without customization.</p>
+            <p><u>Basic Scheduling:</u> Often limited to weekly or monthly contributions without daily options.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 GrowUp. All rights reserved.</p>
+    </footer>
+</body>
+</html>
