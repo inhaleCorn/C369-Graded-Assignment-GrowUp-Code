@@ -72,7 +72,10 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            display: block;
+        }
+        .submit-btn:disabled {
+            background-color: #2e8b57;
+            cursor: not-allowed;
         }
     </style>
 </head>
@@ -108,10 +111,10 @@
             </div>
             <div class="input-group">
                 <label for="terms">
-                    <input type="checkbox" id="terms" name="terms" required> Agree to terms
+                    <input type="checkbox" id="terms" name="terms" required> Agree to <a href="termsAndCo.html">terms and conditions</a>
                 </label>
             </div>
-            <button type="button" class="submit-btn" id="verifySubmit">Verify</button>
+            <button type="button" class="submit-btn" id="verifySubmit" disabled>Verify</button>
         </form>
     </main>
     <script>
@@ -130,6 +133,14 @@
                 window.location.href = 'success.html';
             }
         });
+
+        document.querySelectorAll('#verificationForm input').forEach(input => {
+            input.addEventListener('input', function() {
+                document.getElementById('verifySubmit').disabled = !validateVerificationForm();
+            });
+        });
+
+        document.getElementById('verifySubmit').disabled = !validateVerificationForm();
     </script>
 </body>
 </html>

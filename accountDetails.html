@@ -37,23 +37,22 @@
         }
 
         .content {
-            margin: 2em;
+            padding: 20px;
             text-align: center;
         }
 
         .account-details {
-            max-width: 600px;
-            margin: 0 auto;
             background-color: white;
-            padding: 2em;
             border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 3em;
         }
 
         .account-details h1 {
             color: #2e8b57;
-            margin-bottom: 1em;
         }
 
         .details-row {
@@ -89,14 +88,44 @@
             text-align: right;
         }
 
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button-container button,
+        .button-container a {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .button-container button:hover,
+        .button-container a:hover {
+            background-color: #256c45;
+        }
+
+        .back-button {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #ccc;
+        }
+
         footer {
             background-color: #2e8b57;
             color: white;
             text-align: center;
-            padding: 1em;
-            position: relative;
-            width: 100%;
-            margin-top: 3em;
+            padding: 1em 0;
+            margin-top: 5em;
         }
     </style>
 </head>
@@ -116,46 +145,52 @@
             <h1>Account Details</h1>
             <div class="details-row" id="usernameRow">
                 <div>Username: <span id="usernameValue">JiaWenMadeThis</span></div>
-                <div class="edit-button"><button onclick="editDetail('Username')">Edit</button></div>
+                <div class="edit-button"><button onclick="editDetail('username')">Edit</button></div>
             </div>
             <div class="details-row" id="passwordRow">
                 <div>Password: <span id="passwordValue">********</span></div>
-                <div class="edit-button"><button onclick="editDetail('Password')">Edit</button></div>
+                <div class="edit-button"><button onclick="editDetail('password')">Edit</button></div>
             </div>
             <div class="details-row" id="bankDetailsRow">
                 <div>Bank Details: <span id="bankDetailsValue">9595 4573 4710 9583</span></div>
-                <div class="edit-button"><button onclick="editDetail('BankDetails')">Edit</button></div>
+                <div class="edit-button"><button onclick="navigateToBankDetails()">Edit</button></div>
             </div>
             <div class="details-row" id="emailRow">
                 <div>Email: <span id="emailValue">jiawen@email.com</span></div>
-                <div class="edit-button"><button onclick="editDetail('Email')">Edit</button></div>
+                <div class="edit-button"><button onclick="editDetail('email')">Edit</button></div>
             </div>
             <div class="details-row" id="confirmationCodeRow">
                 <div>Confirmation Code: <span id="confirmationCodeValue">62117</span></div>
-                <div class="edit-button"><button onclick="editDetail('ConfirmationCode')">Edit</button></div>
+                <div class="edit-button"><button onclick="editDetail('confirmationCode')">Edit</button></div>
+            </div>
+            <div class="button-container">
+                <a href="account.html" class="back-button">Go back</a>
             </div>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2024 GrowUp. All rights reserved.</p>
     </footer>
 
     <script>
         const accountDetails = {
-            Username: 'JohnDoe',
-            Password: '********',
-            BankDetails: '9595 4573 4710 9583',
-            Email: 'johndoe@example.com',
-            ConfirmationCode: '123456'
+            username: 'JiaWenMadeThis',
+            password: '********',
+            bankDetails: '9595 4573 4710 9583',
+            email: 'jiawen@email.com',
+            confirmationCode: '62117'
         };
 
         function editDetail(detail) {
             const newValue = prompt(`Enter new value for ${detail}:`, accountDetails[detail]);
             if (newValue !== null && newValue !== "") {
                 accountDetails[detail] = newValue;
-                document.getElementById(detail.toLowerCase() + 'Value').textContent = newValue;
+                document.getElementById(detail + 'Value').textContent = newValue;
             }
+        }
+
+        function navigateToBankDetails() {
+            window.location.href = 'bankDetails.html';
         }
     </script>
 </body>

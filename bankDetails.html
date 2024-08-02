@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp - Bank Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .content {
+            margin: 2em;
+            text-align: center;
+        }
+
+        .bank-details {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3em;
+        }
+
+        .bank-details h1 {
+            color: #2e8b57;
+            margin-bottom: 1em;
+        }
+
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .details-row div {
+            flex: 1;
+            text-align: left;
+        }
+
+        .details-row button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .details-row button:hover {
+            background-color: #267846;
+        }
+
+        .details-row .edit-button {
+            text-align: right;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            width: 100%;
+            margin-top: 3em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="bank-details">
+            <h1>Bank Details</h1>
+            <div class="details-row" id="bankNameRow">
+                <div>Bank Name: <span id="bankNameValue">Sample Bank</span></div>
+                <div class="edit-button"><button onclick="editDetail('bankName')">Edit</button></div>
+            </div>
+            <div class="details-row" id="accountNumberRow">
+                <div>Account Number: <span id="accountNumberValue">9595 4573 4710 9583</span></div>
+                <div class="edit-button"><button onclick="editDetail('accountNumber')">Edit</button></div>
+            </div>
+            <div class="details-row" id="routingNumberRow">
+                <div>Routing Number: <span id="routingNumberValue">123456789</span></div>
+                <div class="edit-button"><button onclick="editDetail('routingNumber')">Edit</button></div>
+            </div>
+            <div class="details-row" id="accountTypeRow">
+                <div>Account Type: <span id="accountTypeValue">Debit</span></div>
+                <div class="edit-button"><button onclick="editDetail('accountType')">Edit</button></div>
+            </div>
+            <div class="details-row" id="investingAllowanceRow">
+                <div>Investing Allowance: <span id="investingAllowanceValue">$500</span></div>
+                <div class="edit-button"><a href="topUp.html"><button>Top-Up</button></a></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 GrowUp. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const bankDetails = {
+            bankName: 'Sample Bank',
+            accountNumber: '9595 4573 4710 9583',
+            routingNumber: '123456789',
+            accountType: 'Debit',
+            investingAllowance: '$500'
+        };
+
+        function editDetail(detail) {
+            const newValue = prompt(`Enter new value for ${detail}:`, bankDetails[detail]);
+            if (newValue !== null && newValue !== "") {
+                bankDetails[detail] = newValue;
+                document.getElementById(detail + 'Value').textContent = newValue;
+            }
+        }
+
+        const investingAllowance = localStorage.getItem('investingAllowance') || '500';
+        document.getElementById('investingAllowanceValue').textContent = `$${parseFloat(investingAllowance).toFixed(2)}`;
+    </script>
+</body>
+</html>

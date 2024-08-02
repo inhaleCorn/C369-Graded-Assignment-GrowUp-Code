@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowUp - Top-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #2e8b57;
+        }
+
+        nav {
+            background-color: #2e8b57;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .content {
+            margin: 2em;
+            text-align: center;
+        }
+
+        .top-up-section {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3em;
+        }
+
+        .top-up-section h1 {
+            color: #2e8b57;
+            margin-bottom: 1em;
+        }
+
+        .top-up-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-up-form input[type="number"],
+        .top-up-form input[type="submit"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 1em;
+            width: calc(100% - 22px);
+        }
+
+        .top-up-form input[type="submit"] {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .top-up-form input[type="submit"]:hover {
+            background-color: #256c45;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            background-color: #2e8b57;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .button-container a:hover {
+            background-color: #256c45;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="advice.html">Advice</a></li>
+            <li><a href="regulations.html">Regulations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="top-up-section">
+            <h1>Top-Up Your Investing Allowance</h1>
+            <form id="topUpForm" class="top-up-form">
+                <input type="number" id="topUpAmount" placeholder="Enter amount to top up" required>
+                <input type="submit" value="Top-Up">
+            </form>
+            <div class="button-container">
+                <a href="bankDetails.html">Back to Bank Details</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('topUpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const topUpAmount = parseFloat(document.getElementById('topUpAmount').value);
+            if (isNaN(topUpAmount) || topUpAmount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+            let currentAllowance = parseFloat(localStorage.getItem('investingAllowance') || '500');
+            currentAllowance += topUpAmount;
+            localStorage.setItem('investingAllowance', currentAllowance.toFixed(2));
+            window.location.href = 'bankDetails.html';
+        });
+
+        if (!localStorage.getItem('investingAllowance')) {
+            localStorage.setItem('investingAllowance', '500');
+        }
+    </script>
+</body>
+</html>

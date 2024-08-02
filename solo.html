@@ -94,13 +94,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            display: block;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        .submit-btn.active {
-            opacity: 1;
-            pointer-events: auto;
         }
         .hidden {
             display: none;
@@ -155,35 +148,6 @@
             </div>
             <button id="submitOrder" class="submit-btn">Submit</button>
         </section>
-        <section id="verification-section" class="hidden">
-            <h2>Before you start investing...</h2>
-            <p>We need to verify that it is you</p>
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-                <label for="confirmationCode">Confirmation Code</label>
-                <input type="text" id="confirmationCode" name="confirmationCode">
-                <label for="creditCard">Credit Card Number</label>
-                <input type="text" id="creditCard" name="creditCard">
-                <div class="terms-group">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms">You agree to the <a href="#">Terms and conditions</a></label>
-                </div>
-                <button id="verifySubmit" class="submit-btn">Submit</button>
-            </div>
-        </section>
-        <section id="success-section" class="hidden">
-            <h2>Successful transaction!</h2>
-            <img src="pictures/submitted.png" alt="Success Image">
-            <p>Thank you for investing with us! <a href="trackInvestment.html">Click here to keep track of your transactions</a></p>
-            <p>Date: <span id="transactionDate"></span></p>
-            <p>Card Type: OCBC</p>
-            <p>No. of Shares Bought: 4</p>
-            <p>Order Type: Limit Order</p>
-            <p>Transaction ID: G832IQ9SH</p>
-        </section>
     </main>
     <script>
         let selectedOrderType = null;
@@ -215,43 +179,7 @@
 
         document.getElementById('submitOrder').addEventListener('click', function() {
             if (selectedOrderType && document.getElementById('shares').value) {
-                document.getElementById('investing-section').classList.add('hidden');
-                document.getElementById('verification-section').classList.remove('hidden');
-            }
-        });
-
-        function validateVerificationForm() {
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const confirmationCode = document.getElementById('confirmationCode').value;
-            const creditCard = document.getElementById('creditCard').value;
-            const terms = document.getElementById('terms').checked;
-            const verifyBtn = document.getElementById('verifySubmit');
-
-            if (username && email && confirmationCode && creditCard && terms) {
-                verifyBtn.classList.add('active');
-            } else {
-                verifyBtn.classList.remove('active');
-            }
-        }
-
-        function getCurrentDate() {
-            const now = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return now.toLocaleDateString(undefined, options);
-        }
-
-        document.getElementById('username').addEventListener('input', validateVerificationForm);
-        document.getElementById('email').addEventListener('input', validateVerificationForm);
-        document.getElementById('confirmationCode').addEventListener('input', validateVerificationForm);
-        document.getElementById('creditCard').addEventListener('input', validateVerificationForm);
-        document.getElementById('terms').addEventListener('change', validateVerificationForm);
-
-        document.getElementById('verifySubmit').addEventListener('click', function() {
-            if (document.getElementById('verifySubmit').classList.contains('active')) {
-                document.getElementById('verification-section').classList.add('hidden');
-                document.getElementById('success-section').classList.remove('hidden');
-                document.getElementById('transactionDate').innerText = getCurrentDate();
+                window.location.href = 'verification.html'; // Redirect to verification.html
             }
         });
     </script>
