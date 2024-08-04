@@ -129,7 +129,7 @@
             <h1>Welcome Jia Wen!</h1>
             <div class="buttons">
                 <a href="trackInvestment.html">Track Investments</a>
-                <a href="accountDetails.html">Account Details</a>
+                <a id="accountDetailsLink" href="accountVerification.html">Account Details</a>
                 <a href="investingBuddies.html">Investing Buddies</a>
             </div>
         </section>
@@ -143,18 +143,5 @@
     <footer>
         <p>&copy; 2024 GrowUp. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('accountDetailsLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            const isAuthenticated = localStorage.getItem('isAuthenticated');
-
-            if (isAuthenticated) {
-                window.location.href = 'accountDetails.html';
-            } else {
-                window.location.href = 'verification.html';
-            }
-        });
-    </script>
 </body>
 </html>
